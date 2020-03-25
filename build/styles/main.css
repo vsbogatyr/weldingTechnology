@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #666666;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.main-block {
+  border: 2px solid #bdbcbc;
+  border-radius: 5px;
+  width: 700px;
+  background-color: #f0ecec; }
+
+.header {
+  background-color: #bdbcbc;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap; }
+
+.header__left, .header__right {
+  width: 50%;
+  height: 100%; }
+
+.nav {
+  display: none; }
+
+.submenu-list li {
+  list-style: square; }
