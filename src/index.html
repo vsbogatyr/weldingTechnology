@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <title>Сварочные технологии</title>
@@ -13,67 +14,278 @@
     <div class="wrapper">
         <div class="main-block">
             <header class="header">
-                <div class="header__left"></div>
+                <div class="header__left">
+                    <nav class="nav">
+                        <div class="menu active">                           
+                            <ul class="menu__catalog-list">
+                                <a href="#" class="menu__catalog-title">Каталог оборудования</a>
+                                <li class="menu__catalog-item">
+                                    <a href="#" class="menu__group-name">Электроинструменты</a>                                                    
+                                    <ul class="submenu__tools">
+                                        <li class="submenu__tool">
+                                            <a href="#" class="submenu__tool-name">Болгарки</a>
+                                            <ul class="submenu__brands">
+                                                <li class="submenu__brand">
+                                                    <a href="#" class="submenu__brand-name">Makita</a>
+                                                    <ul class="submenu__models">
+                                                        <li class="submenu__model">
+                                                            <a href="#" class="submenu__model-name">BO4557</a>
+                                                        </li>
+                                                        <li class="submenu__model">
+                                                            <a href="#" class="submenu__model-name">GA9020</a>
+                                                        </li>
+                                                        <li class="submenu__model">
+                                                            <a href="#" class="submenu__model-name">GD0600</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>                                        
+                                        </li>
+                                    </ul>
+                                        
+                                </li>
+                                <li class="menu__catalog-item">
+                                    <a href="#" class="menu__group-name">Генераторы</a>
+                                    <ul class="submenu__tools">
+                                        <li class="submenu__tool">
+                                            <a href="#" class="submenu__tool-name">Бензиновые</a>
+                                            <ul class="submenu__brands">
+                                                <li class="submenu__brand">
+                                                    <a href="#" class="submenu__brand-name">Aurora</a>
+                                                    <ul class="submenu__models">
+                                                        <li class="submenu__model">
+                                                            <a href="#" class="submenu__model-name">AGE 3500 D</a>
+                                                        </li>
+                                                        <li class="submenu__model">
+                                                            <a href="#" class="submenu__model-name">AGE 7500 DZN</a>
+                                                        </li>
+                                                        <li class="submenu__model">
+                                                            <a href="#" class="submenu__model-name">AGE 12000 D PLUS</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>                                        
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__catalog-item">
+                                    <a href="#" class="menu__group-name">Аккумуляторы</a>
+                                </li>
+                            </ul>                    
+                        </div>                                
+                    </nav>
+                </div>
                 <div class="header__right"></div>
-            </header>
-            <nav class="nav">
-                <ul class="menu-list">
-                    <li class="menu-item">
-                        <a href="#" class="menu-title">Каталог оборудования</a>
-                        <ul class="menu__catalog-list">
-                            <li class="menu__catalog-item">
-                                <a href="#" class="menu__catalog-element">1 уровень</a>
-                            </li>
-                            <li class="menu__catalog-item">
-                                <a href="#" class="menu__catalog-element">1 уровень</a>
-                            </li>
-                            <li class="menu__catalog-item">
-                                <a href="#" class="menu__catalog-element">1 уровень</a>
-                            </li>
-                        </ul>
+            </header>            
+            <div class="product__wrap">
+                <ul class="product__list">               
+                    <li class="product__item">
+                        <div class="product__img">
+                            <img src="img/makita.png" alt="" class="product__pic">
+                        </div>
+                        <div class="product__name">
+                            <a href="#" class="product__name-link">Болгарка Makita</a>
+                            <div class="product__name-edit">
+                                <input type="text" class="product__name-input" id="product__name-input">
+                                <button class="product__name-edit-button" id="edit-button">Готово</button>
+                            </div>
+                        </div>
+                        <div class="product__desc">
+                            <ul class="product__desc-list">
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Мощность</span>
+                                    <span class="product__desc-value">1500 Вт</span>
+                                </li>
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Диаметр диска</span>
+                                    <span class="product__desc-value">150 мм</span>
+                                </li>
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Напряжение</span>
+                                    <span class="product__desc-value">220 В</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product__price-block">
+                            <div class="product__price">
+                                <span class="product__price-value"> 10000 </span>
+                                <span class="product__price-currency"> руб </span>
+                            </div>
+                            <div class="product__btn">
+                                <a href="#" class="product__btn-link">Купить</a> 
+                            </div>
+                        </div>
                     </li>
-                </ul>
-                <ul class="submenu-list">
-                    <li class="submenu-item">
-                        <a href="#" class="submenu-title">2 уровень</a>
-                        <ul class="submenu-list">
-                            <li class="submenu-item">
-                                <a href="#" class="submenu-title">уровень 3</a>
-                                <ul class="submenu-list">
-                                    <li class="submenu-item">
-                                        <a href="#" class="submenu-title">уровень 4</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="#" class="submenu-title">уровень 4</a>
-                                    </li>
-                                    <li class="submenu-item">
-                                        <a href="#" class="submenu-title">уровень 4</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <li class="product__item">
+                        <div class="product__img">
+                            <img src="img/makita.png" alt="" class="product__pic">
+                        </div>
+                        <div class="product__name">
+                            <a href="#" class="product__name-link">Болгарка Makita</a> 
+                        </div>
+                        <div class="product__desc">
+                            <ul class="product__desc-list">
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Мощность</span>
+                                    <span class="product__desc-value">1500 Вт</span>
+                                </li>
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Диаметр диска</span>
+                                    <span class="product__desc-value">150 мм</span>
+                                </li>
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Напряжение</span>
+                                    <span class="product__desc-value">220 В</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product__price-block">
+                            <div class="product__price">
+                                <span class="product__price-value"> 10000 </span>
+                                <span class="product__price-currency"> руб </span>
+                            </div>
+                            <div class="product__btn">
+                                <a href="#" class="product__btn-link">Купить</a> 
+                            </div>
+                        </div>
                     </li>
-                </ul>                
-            </nav>
-            <div class="product">
-                <div class="product__img">
-                    <img src="img/makita.jpg" alt="" class="product__pic">
-                </div>
-                <div class="product__name">Болгарка Makita</div>
-                <div class="product__desc">Характеристики болгарки</div>
-                <div class="product__price-block">
-                    <div class="product__price">
-                        <span class="product__price-value">10000</span>
-                        <span class="product__price-currency">руб</span>
-                    </div>
-                    <div class="product__btn">
-                        Купить
-                    </div>
-                </div>
-            </div>
+                    <li class="product__item">
+                        <div class="product__img">
+                            <img src="img/makita.png" alt="" class="product__pic">
+                        </div>
+                        <div class="product__name">
+                            <a href="#" class="product__name-link">Болгарка Makita</a> 
+                        </div>
+                        <div class="product__desc">
+                            <ul class="product__desc-list">
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Мощность</span>
+                                    <span class="product__desc-value">1500 Вт</span>
+                                </li>
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Диаметр диска</span>
+                                    <span class="product__desc-value">150 мм</span>
+                                </li>
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Напряжение</span>
+                                    <span class="product__desc-value">220 В</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product__price-block">
+                            <div class="product__price">
+                                <span class="product__price-value"> 10000 </span>
+                                <span class="product__price-currency"> руб </span>
+                            </div>
+                            <div class="product__btn">
+                                <a href="#" class="product__btn-link">Купить</a> 
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product__item">
+                        <div class="product__img">
+                            <img src="img/makita.png" alt="" class="product__pic">
+                        </div>
+                        <div class="product__name">
+                            <a href="#" class="product__name-link">Болгарка Makita</a> 
+                        </div>
+                        <div class="product__desc">
+                            <ul class="product__desc-list">
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Мощность</span>
+                                    <span class="product__desc-value">1500 Вт</span>
+                                </li>
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Диаметр диска</span>
+                                    <span class="product__desc-value">150 мм</span>
+                                </li>
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Напряжение</span>
+                                    <span class="product__desc-value">220 В</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product__price-block">
+                            <div class="product__price">
+                                <span class="product__price-value"> 10000 </span>
+                                <span class="product__price-currency"> руб </span>
+                            </div>
+                            <div class="product__btn">
+                                <a href="#" class="product__btn-link">Купить</a> 
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product__item">
+                        <div class="product__img">
+                            <img src="img/makita.png" alt="" class="product__pic">
+                        </div>
+                        <div class="product__name">
+                            <a href="#" class="product__name-link">Болгарка Makita</a> 
+                        </div>
+                        <div class="product__desc">
+                            <ul class="product__desc-list">
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Мощность</span>
+                                    <span class="product__desc-value">1500 Вт</span>
+                                </li>
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Диаметр диска</span>
+                                    <span class="product__desc-value">150 мм</span>
+                                </li>
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Напряжение</span>
+                                    <span class="product__desc-value">220 В</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product__price-block">
+                            <div class="product__price">
+                                <span class="product__price-value"> 10000 </span>
+                                <span class="product__price-currency"> руб </span>
+                            </div>
+                            <div class="product__btn">
+                                <a href="#" class="product__btn-link">Купить</a> 
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product__item">
+                        <div class="product__img">
+                            <img src="img/makita.png" alt="" class="product__pic">
+                        </div>
+                        <div class="product__name">
+                            <a href="#" class="product__name-link">Болгарка Makita</a> 
+                        </div>
+                        <div class="product__desc">
+                            <ul class="product__desc-list">
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Мощность</span>
+                                    <span class="product__desc-value">1500 Вт</span>
+                                </li>
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Диаметр диска</span>
+                                    <span class="product__desc-value">150 мм</span>
+                                </li>
+                                <li class="product__desc-item">
+                                    <span class="product__desc-name">Напряжение</span>
+                                    <span class="product__desc-value">220 В</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product__price-block">
+                            <div class="product__price">
+                                <span class="product__price-value"> 10000 </span>
+                                <span class="product__price-currency"> руб </span>
+                            </div>
+                            <div class="product__btn">
+                                <a href="#" class="product__btn-link">Купить</a> 
+                            </div>
+                        </div>
+                    </li>                           
+                </ul>           
+            </div>            
         </div>
     </div>
-
+    <script src="scripts/app.js"></script>
 </body>
 
 </html>
