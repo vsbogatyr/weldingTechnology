@@ -126,6 +126,7 @@ li {
         opacity: 0;
         transition: opacity 0.3s;
         width: auto;
+        z-index: 10;
 
         & a {
             white-space: nowrap;
@@ -166,19 +167,14 @@ li {
     @include desktop {
         &.active {
             flex-direction: column;
-            & .product__item {
+            & .product__card {
                 width: 100%;
                 margin: 0;
                 border: none;
                 display: flex;
                 align-items: center;
                 justify-content: space-around;
-                border-bottom: 1px solid #bdbcbc;
-    
-                &:last-child {
-                    border-bottom: none;
-                }
-    
+                       
                 & > div {
                     width: 20%;
                 }
@@ -188,12 +184,21 @@ li {
                 width: 20%;
                 border: 1px solid #bdbcbc;
                 padding: 5px;          
+            }            
+
+            & .product__item {                               
+                border: none;
+                border-bottom: 1px solid #bdbcbc;
+                
+                &:last-child {
+                    border-bottom: none;
+                }
             }
         }
     }
 }
 
-.product__item {
+.product__card {
     width: 250px;
     margin: 20px;
     border: 1px solid #bdbcbc;
@@ -202,6 +207,14 @@ li {
     @include mobil {
         width: 90%;
     }
+}
+
+.hide {
+    opacity: 0;
+}
+
+.hover {
+    background-color: wheat;
 }
 
 .product__img {
@@ -217,22 +230,45 @@ li {
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: 500;
+    position: relative;
 
     &-link {
         text-decoration: none;
+    }   
+}
+
+.edit {
+    background: rgba(192, 189, 189, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    width: 250px;
+    left: -9999px;
+    top: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+
+    &.active {
+        left: 50%;
+        transform: translate(-50%);
+        opacity: 1;
     }
 
-    &-edit {
-        background: rgba(155, 151, 151, 0.9);
-        padding: 20px;
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    &__input-wrap {
+        margin-bottom: 10px;
     }
-
-    &-input {
+    
+    &__input {
         width: 100%;
+    }
+
+    &__button-wrap {
+        display: flex;
+        justify-content: center;
     }
 }
 

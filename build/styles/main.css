@@ -90,7 +90,8 @@ li {
   background: rgba(255, 255, 255, 0.9);
   opacity: 0;
   transition: opacity 0.3s;
-  width: auto; }
+  width: auto;
+  z-index: 10; }
   .submenu__tools a {
     white-space: nowrap; }
   .submenu__tools.active {
@@ -120,31 +121,39 @@ li {
   @media screen and (min-width: 1000px) {
     .product__list.active {
       flex-direction: column; }
-      .product__list.active .product__item {
+      .product__list.active .product__card {
         width: 100%;
         margin: 0;
         border: none;
         display: flex;
         align-items: center;
-        justify-content: space-around;
-        border-bottom: 1px solid #bdbcbc; }
-        .product__list.active .product__item:last-child {
-          border-bottom: none; }
-        .product__list.active .product__item > div {
+        justify-content: space-around; }
+        .product__list.active .product__card > div {
           width: 20%; }
       .product__list.active .product__img {
         width: 20%;
         border: 1px solid #bdbcbc;
-        padding: 5px; } }
+        padding: 5px; }
+      .product__list.active .product__item {
+        border: none;
+        border-bottom: 1px solid #bdbcbc; }
+        .product__list.active .product__item:last-child {
+          border-bottom: none; } }
 
-.product__item {
+.product__card {
   width: 250px;
   margin: 20px;
   border: 1px solid #bdbcbc;
   padding: 20px; }
   @media screen and (max-width: 480px) {
-    .product__item {
+    .product__card {
       width: 90%; } }
+
+.hide {
+  opacity: 0; }
+
+.hover {
+  background-color: wheat; }
 
 .product__img {
   width: 100%; }
@@ -156,18 +165,36 @@ li {
 .product__name {
   margin-bottom: 10px;
   font-size: 18px;
-  font-weight: 500; }
+  font-weight: 500;
+  position: relative; }
   .product__name-link {
     text-decoration: none; }
-  .product__name-edit {
-    background: rgba(155, 151, 151, 0.9);
-    padding: 20px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
-  .product__name-input {
+
+.edit {
+  background: rgba(192, 189, 189, 0.9);
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  width: 250px;
+  left: -9999px;
+  top: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 10; }
+  .edit.active {
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 1; }
+  .edit__input-wrap {
+    margin-bottom: 10px; }
+  .edit__input {
     width: 100%; }
+  .edit__button-wrap {
+    display: flex;
+    justify-content: center; }
 
 .product__desc {
   margin-bottom: 10px; }
