@@ -12,9 +12,11 @@ const productCard = document.querySelectorAll('.product__card');
 const productItem = document.querySelectorAll('.product__item');
 let curentCard;
 let moveCard;
-let j;
 let currentItem;
 
+productItem.forEach((item) => {
+    item.draggable = true;
+});
 
 function tableView() {
     table.addEventListener('mouseover', () => {
@@ -63,6 +65,7 @@ function menuOpen() {
 }
 
 function replace() {
+    let j;
     for (let i = 0; i < productItem.length; i++) {
         productItem[i].addEventListener('dragstart', function () {
             this.classList.add('hide');
@@ -122,30 +125,51 @@ function validity() {
 
         console.log('Массив скобок ', hooks);
 
-        let save = hooks[0];
-        let count = 1;
-        for (let i = 1; i < hooks.length; i++) {
-            if ((hooks[i][0] !== save[0]) && (count == i)) {
-                tmp.push(save.concat(hooks[i]));
-                save = hooks[i + 1];
-                count += 1;
-            } else if (hooks[i][0] == save[0]) {
-                tmp.push(hooks[i]);
-                save = hooks[i];
-                count += 1;
+        let a =[];
+        let b =[];
+        for (let i = 0; i < hooks.length; i++) {                       
+            if (i%2 === 0) {
+                a.push(hooks[i]);
+            } else if (i%2 !== 0) {
+                b.push(hooks[i]);
+            }            
+        }
+
+        let lens = tmp.map((item)=>{
+            return item.length;
+        });    
+
+        let count=0;
+        for (let i = 0; i < lens.length-1; i++){
+            for (let j=+1; i < lens.length; i++){
+                if (lens[i]===lens[j]){
+                    count+=1;
+                }
             }
         }
 
+        for (let i = 0; i < a.length; i++) {
+            if ((i===a.length-1)&&(!b[i])) {
+                tmp.push(a[i]);                    
+            } else if ((a[i][0] !== b[i][0]) || (a[i][0] === b[i][0]) && (count===tmp.length)){               
+                tmp.push(a[i].concat(b[i]));                              
+            } else if (a[i][0] === b[i][0]) {                              
+                tmp.push(a[i]);
+                tmp.push(b[i]);             
+            }           
+        }     
+      
         for (let i = 0; i < tmp.length; i++) {
             tmp[i].push(tmp[i][1]);
-            tmp[i].splice(1, 1);
-            result[i] = tmp[i].join(' ');
+            tmp[i].splice(1, 1);     
         }
 
+        for (let i = 0; i < tmp.length; i++) {
+            result[i] = tmp[i].join(' ');
+        }
         result = result.join(' ');
 
         console.log('Correct sequence ', result);
-
         return result;
     }
 
@@ -182,7 +206,7 @@ function validity() {
         }
     }
 
-    //validStr(string(4));
+    validStr(string(6));
 }
 
 tableView();
