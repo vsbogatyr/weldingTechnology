@@ -14,33 +14,6 @@ let curentCard;
 let moveCard;
 let currentItem;
 
-/* productItem.forEach((item) => {
-    item.draggable = true;
-}); */
-
-/* for (let node of productItem.childNodes) {
-    //node.draggable = true;
-    console.log(node);
-} */
-
-/* for (let i = 0; i < productItem.length; i++) {
-    let child = productItem[i].childNodes;
-    child[i].draggable = true;
-
-    for (let i = 0; i < child.length - 1; i++) {
-        let descendant = child[i].childNodes;
-        //descendant[i].draggable = true;
-        //console.log(descendant[i]);
-          for (let i = 0; i < child.length-1; i++) {
-              descendant[i].draggable = true;
-              console.log(child[i]);
-          }
-    }
-    console.log(productItem[i].childNodes);
-} */
-
-
-
 //Table
 
 function tableView() {
@@ -83,31 +56,12 @@ function menuOpen() {
 
 //Rename
 
-/* for (let i = 0; i < productNameLink.length; i++) {
-    productNameLink[i].addEventListener('click', (e) => {
-        e.preventDefault();
-        edit[i].classList.add('active');
-        console.log('edit ',i)
-        input[i].value = productNameLink[i].textContent;
-    })
-}
-
-for (let i = 0; i < productNameLink.length; i++) {
-    button[i].addEventListener('click', (e) => {
-        e.preventDefault();
-        productNameLink[i].textContent = input[i].value;
-        edit[i].classList.remove('active');
-    })
-} */
-
 function rename() {
     for (let i = 0; i < productNameLink.length; i++) {
         productItem[i].addEventListener('click', (e) => {
-            console.log('edit ', e.target);
             e.preventDefault();
             let target = e.target;
             if (target.classList.contains('product__name-link')) {
-                console.log('Curent ', target);
                 productNameLink = document.querySelectorAll('.product__name-link');
                 edit = document.querySelectorAll('.edit');
                 input = document.querySelectorAll('.edit__input');
@@ -124,10 +78,8 @@ function rename() {
             if (target.classList.contains('edit__button')) {
                 e.preventDefault();
                 input = document.querySelectorAll('.edit__input');
-                console.log(productNameLink[i]);
                 productNameLink[i].textContent = input[i].value;
                 edit[i].classList.remove('active');
-                console.log('input[i].value ', input[i].value);
             }
         })
     }
@@ -138,15 +90,15 @@ function rename() {
 function replace() {
     let j;
 
+    let logo = document.createElement('img');
+    logo.src = 'img/logo.png';
+    logo.width = 100;
+
     for (let i = 0; i < productItem.length; i++) {
         productItem[i].addEventListener('dragstart', function (e) {
             this.classList.add('hide');
-            e.DataTransfer.setData('application/x-moz-node', this.innerHTML);
-            e.DataTransfer.setData('text/html', this.innerHTML);
-            let logo = document.createElement('img');
-            logo.src = 'img/logo.png';
-            logo.width = 200;
-            e.DataTransfer.setDragImage(logo, -10, -10);
+            e.dataTransfer.setData('text/plain', this.innerHTML);
+            e.dataTransfer.setDragImage(logo, 50, 50);
         })
 
         productItem[i].addEventListener('dragend', function () {
@@ -164,8 +116,9 @@ function replace() {
             e.preventDefault();
         })
 
-        productItem[i].addEventListener('dragleave', function () {
+        productItem[i].addEventListener('dragleave', function (e) {
             this.classList.remove('hover');
+            e.preventDefault();
         })
 
         productItem[i].addEventListener('drop', function () {
@@ -173,13 +126,10 @@ function replace() {
 
             setTimeout(() => {
                 productItem[j].innerHTML = productItem[i].innerHTML;
-                console.log('ПЕРЕМЕЩАЕМЫЙ ', j);
             }, 10)
 
             setTimeout(() => {
                 productItem[i].innerHTML = productItemCurent;
-                console.log('Куда перемещается ', i);
-                console.log(productNameLink[i]);
             }, 20)
         })
     }
